@@ -1,0 +1,122 @@
+    *, *:before, *:after {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        outline: 0;
+        box-sizing: border-box;
+      }
+    
+   .menu{
+       background:radial-gradient(white, #F8BBD0, black);
+       height: 85px;
+       width: 100vw;
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       border-bottom: 1px solid black;
+       box-shadow: 5px 0 10px rgba(0, 0, 0, .6);
+   }
+
+   .imagen{
+       height: 100px;
+       width: 100px;
+   }
+
+   .menu_items{
+       display: flex;
+       list-style: none;
+       margin-right: 30px;
+       }
+
+    .menu_items li {
+        border-radius: 3px;
+        margin: 0 15px;
+    }
+
+    .menu_items li a {
+        padding: 7px 100px;
+        text-decoration: none;
+        font-size: 18px;
+        display: block;
+        text-transform: uppercase;
+        color: black;
+    }
+
+    .menu_items li:hover, li.active{
+        background-color: rgba(0, 0, 0, .3);
+        transition: .4s;
+    }
+
+    .btn_menu{
+        margin-right: 30px;
+        font-size: 25px;
+        color: black;
+        cursor: pointer;
+        display: none;
+    }
+
+    ul.show{
+        top: 65px;
+    }
+
+    @media screen and (max-width: 952px) {
+        .menu_items li a {
+            font-size: 16px;
+        }
+    }
+
+    @media screen and (max-width: 858px){
+        .menu{
+            height: 65px;
+        }
+
+        .btn_menu{
+            display: inline-flex;
+        }
+
+        .menu_items{
+            position: fixed;
+            width: 100vw;
+            height: calc(100% - 65px);
+            background: #414141;
+            top: -100vw;
+            text-align: center;
+            transition: all .4s;
+            flex-direction: column;
+        }
+
+        .menu_items li {
+            margin: 30px 0 0 0;
+            line-height: 30px;
+        }
+
+        .menu_items li:hover {
+            background: none;
+        }
+
+        .menu_items li a {
+            font-size: 20px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .menu_items li a:hover {
+            color: #F8BBD0;
+        }
+
+        .imagen{
+            height: 70px;
+            width: 70px;
+        }
+        
+    @media screen and (max-width: 858px) and (orientation: landscape) {
+        .menu_items li{
+            margin: 5px 0 0 0;
+        }
+
+        .menu_items{
+            overflow: scroll;
+            height: calc(100% - 65px);
+        }
+    }
+    }
